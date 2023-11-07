@@ -2,7 +2,23 @@
 
 let grid = document.getElementById("grid");
 const playBtn = document.getElementById("playGame");
-playBtn.addEventListener("click", function (){generateGrid(100)});
+const difficultyToggler = document.getElementById("difficulty");
+
+playBtn.addEventListener("click", function (){
+    if (difficultyToggler.value == "easy") {
+        eraseGrid()
+        generateGrid(100)
+    }
+    else if (difficultyToggler.value == "medium") {
+        eraseGrid()
+        generateGrid(81)
+    }
+    else if (difficultyToggler.value == "hard") {
+        eraseGrid()
+        generateGrid(49)
+    }
+});
+
 
   
 
@@ -14,14 +30,22 @@ function generateGrid(cellnum) {
         grid.appendChild(cell);
     }
 }
-
-
-function generateSquare(numero) {
+function eraseGrid() {
+    grid.innerHTML = "";
+}
+function generateSquare(number) {
     const cell = document.createElement("div");
     cell.classList.add("square");
-    cell.innerHTML = numero
+    if (difficultyToggler.value == "easy") {
+        cell.classList.add("easy");
+    } else if (difficultyToggler.value == "medium"){
+        cell.classList.add("medium");
+    } else if (difficultyToggler.value == "hard"){
+        cell.classList.add("hard");
+    } 
+    cell.innerHTML = number
     cell.addEventListener("click", function() {
-        console.log("clicked on cell", numero);
+        console.log("clicked on cell", number);
         cell.classList.toggle("highlight");
     });
     return cell;

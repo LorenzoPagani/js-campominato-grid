@@ -16,16 +16,20 @@
 
 .square {
     border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.easy {
     height: calc(100% / 10 );
     width: calc(100% / 10 );
 }
-.square-medium {
-    border: black solid 1px;
+.medium {
     height: calc(100% / 9 );
     width: calc(100% / 9 );
 }
-.square-hard {
-    border: black solid 1px;
+.hard {
     height: calc(100% / 7 );
     width: calc(100% / 7 );
 }
