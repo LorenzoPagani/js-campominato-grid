@@ -9,16 +9,20 @@
 <body>
     <header>
         <h1>Campo minato</h1>
-        <button id="playGame">Gioca!</button>
-        <label for="difficulty">Difficoltà:</label>
-        <select id="difficulty">
-            <option value="easy">Facile</option>
-            <option value="medium">Medio</option>
-            <option value="hard">Difficile</option>
-        </select>
+        <div id="input-box">
+            <button id="playGame">Gioca!</button>
+            <label for="difficulty">Difficoltà:</label>
+            <select id="difficulty">
+                <option value="easy">Facile</option>
+                <option value="medium">Medio</option>
+                <option value="hard">Difficile</option>
+            </select>
+        </div>
     </header>
     <main>
-        <div id="grid"></div>
+        <div class="wrapper">
+            <div id="grid"></div>
+        </div>
     </main>
     
     <script src="main.js"></script>
